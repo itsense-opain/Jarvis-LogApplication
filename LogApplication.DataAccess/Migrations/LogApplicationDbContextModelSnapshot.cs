@@ -47,7 +47,7 @@ namespace LogApplication.DataAccess.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("tbl_log_aplicacion", "Seguridad");
+                    b.ToTable("tbl_log_aplicacion", "log");
                 });
 #pragma warning restore 612, 618
         }

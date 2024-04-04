@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace LogApplication.DataAccess.DataAccessLogApplication
 {
-    [Table("tbl_log_aplicacion", Schema = "Seguridad")]
+    [Table("tbl_log_aplicacion", Schema = "log")]
     public class LogApplicationDto
     {
         public LogApplicationDto()

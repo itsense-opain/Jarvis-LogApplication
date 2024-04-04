@@ -12,11 +12,11 @@ namespace LogApplication.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "Seguridad");
+                name: "log");
 
             migrationBuilder.CreateTable(
                 name: "tbl_log_aplicacion",
-                schema: "Seguridad",
+                schema: "log",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -38,7 +38,7 @@ namespace LogApplication.DataAccess.Migrations
         {
             migrationBuilder.DropTable(
                 name: "tbl_log_aplicacion",
-                schema: "Seguridad");
+                schema: "log");
         }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LogApplication.DataAccess.Migrations
 {
     [DbContext(typeof(LogApplicationDbContext))]
-    [Migration("20240404173246_InitialCreate")]
+    [Migration("20240404213109_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -50,7 +50,7 @@ namespace LogApplication.DataAccess.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("tbl_log_aplicacion", "Seguridad");
+                    b.ToTable("tbl_log_aplicacion", "log");
                 });
 #pragma warning restore 612, 618
         }

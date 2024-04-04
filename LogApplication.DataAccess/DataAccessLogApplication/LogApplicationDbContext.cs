@@ -21,7 +21,7 @@ namespace LogApplication.DataAccess.DataAccessLogApplication
             public LogApplicationDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<LogApplicationDbContext>();
-                optionsBuilder.UseSqlServer("Server=(localdb)\\itsense;Database=opain;Trusted_Connection=True");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\itsense;Database=logOpain;Trusted_Connection=True");
 
                 return new LogApplicationDbContext(optionsBuilder.Options);
             }
