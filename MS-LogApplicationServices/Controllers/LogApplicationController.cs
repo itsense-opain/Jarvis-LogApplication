@@ -21,10 +21,8 @@ namespace MS_LogApplicationServices.Controllers
         [HttpPost]
         [Route("RegistrarLogAplicacion")]
         public async Task<ActionResult<string>> RegistrarLogAplicacion([FromBody] LogApplicationDto datos_entrada)
-        {
-            
+        {            
             return Ok(_logApplicacionData.RegistrarLogAplicacion(datos_entrada));
-
         }
     }
 }

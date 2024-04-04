@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LogApplication.DataAccess.DataAccessLogApplication
 {
-    [Table("tbl_log_aplicacion")]
+    [Table("tbl_log_aplicacion", Schema = "Seguridad")]
     public class LogApplicationDto
     {
         public LogApplicationDto()

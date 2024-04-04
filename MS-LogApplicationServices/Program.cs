@@ -1,5 +1,6 @@
 using LogApplication.DataAccess.DataAccessLogApplication;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddTransient<ILogApplicacionData, LogApplicacionData>();
 
 var connectionString = builder.Configuration.GetConnectionString("LogAplicacionDB");
-builder.Services.AddDbContext<LogApplicationDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<LogApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
