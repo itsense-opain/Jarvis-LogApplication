@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +12,12 @@ namespace LogApplication.DataAccess.DataAccessLogApplication
     {
 
         private readonly LogApplicationDbContext _logApplicationContext;
+        private readonly ILogger<LogApplicationDbContext> _logger;
 
-        public LogApplicacionData(LogApplicationDbContext logApplicationContext)
+        public LogApplicacionData(LogApplicationDbContext logApplicationContext, ILogger<LogApplicationDbContext> logger)
         {
             _logApplicationContext = logApplicationContext;
+            _logger = logger;
         }
 
 
@@ -31,6 +35,7 @@ namespace LogApplication.DataAccess.DataAccessLogApplication
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error [500] Internal Server Error: Se detuvo el sistema por el siguiente error inesperado: " + ex.Message);
                 return 0;
             }
         }

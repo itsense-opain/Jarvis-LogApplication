@@ -8,10 +8,12 @@ namespace MS_LogApplicationServices.Controllers
     {
 
         private readonly ILogApplicacionData _logApplicacionData;
+        private readonly ILogger<LogApplicationController> _logger;
 
-        public LogApplicationController(ILogApplicacionData logApplicacionData)
+        public LogApplicationController(ILogApplicacionData logApplicacionData, ILogger<LogApplicationController> logger)
         {
             _logApplicacionData = logApplicacionData;
+            _logger = logger;
         }
 
         /// <summary>
@@ -21,7 +23,8 @@ namespace MS_LogApplicationServices.Controllers
         [HttpPost]
         [Route("RegistrarLogAplicacion")]
         public async Task<ActionResult<string>> RegistrarLogAplicacion([FromBody] LogApplicationDto datos_entrada)
-        {            
+        {
+            _logger.LogWarning("Invoque el método de Guardar registro log en base de datos");
             return Ok(_logApplicacionData.RegistrarLogAplicacion(datos_entrada));
         }
     }
