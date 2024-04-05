@@ -24,7 +24,6 @@ namespace MS_LogApplicationServices.Controllers
         [Route("RegistrarLogAplicacion")]
         public async Task<ActionResult<string>> RegistrarLogAplicacion([FromBody] LogApplicationDto datos_entrada)
         {
-            _logger.LogWarning("Invoque el método de Guardar registro log en base de datos");
             return Ok(_logApplicacionData.RegistrarLogAplicacion(datos_entrada));
         }
     }
